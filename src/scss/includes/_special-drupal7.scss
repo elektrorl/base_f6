@@ -1,0 +1,71 @@
+#skip a
+{
+    position: absolute !important;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+}
+
+#skip a:active,
+#skip a:focus
+{
+    position: static !important;
+
+    overflow: visible;
+    clip: auto;
+
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+html.js #module-filter-submit.fixed
+{
+    position: relative;
+}
+
+#module-filter-wrapper
+{
+    ul.inline,
+    ul.links.inline
+    {
+        font-size: rem-calc(12);
+
+        display: block;
+
+        margin: 0;
+        padding: 0;
+    }
+}
+
+a.tabledrag-handle .handle
+{
+    width: rem-calc(29);
+    height: rem-calc(29);
+}
+
+#admin-menu,
+#admin-menu .dropdown
+{
+    font-size: rem-calc(12);
+}
+
+#admin-menu
+{
+    font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+
+
+
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+
+
