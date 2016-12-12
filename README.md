@@ -21,5 +21,5 @@ bower install
 `npm start` pour déclencher Gulp. À la fin de Gulp, les fichiers présents dans `src` seront compilés dans `css` et `js` et uploadés dans.
 
 ### Pour toute nouvelle utilisation
-Ouvrir `gulpfile.js` et éditer les options SFTP pour uploader les fichiers compilés directement sur le nouveau serveur SSH.
+Ouvrir `gulpfile.js` et éditer les options SFTP (`function sftpOpts`) pour uploader les futurs fichiers compilés sur le nouveau serveur SSH. Idéalement ne pas utiliser le mot de passe, mais préférer une identification par clé SSH. Sinon envisager le fichier [`.ftppass`](https://www.npmjs.com/package/gulp-sftp#authentication).
 Vérifier les chemins des dossiers `css` et `js`.

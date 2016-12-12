@@ -88,9 +88,10 @@ function javascript() {
 //SFTP
 function sftpOpts(path) {
   return {
-    host: "ftp.cluster005.ovh.net",
-    user: "noise",
-    remotePath: "www/websites/traitsunion/sites/all/themes/base_f6/" + path
+    host: 'website.com',
+    user: 'johndoe',
+    pass: '1234'
+    remotePath: "www/monthemeenligne/" + path
   };
 }
 // Copy images to the "dist" folder
