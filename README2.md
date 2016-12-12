@@ -1,6 +1,6 @@
 # Base Theme Drupal 7 | Foundation 6 · FredORL version
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](base_f6/logo.png)
+(https://raw.githubusercontent.com/elektrorl/base_f6/master/logo.png)
 
 
 
@@ -53,4 +53,4 @@ http://localhost:8000
 ```
 
 To create compressed, production-ready assets, run `npm run build`.
-# base_f6
+
