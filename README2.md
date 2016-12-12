@@ -1,6 +1,6 @@
 # Base Theme Drupal 7 | Foundation 6 · FredORL version
 
-(https://raw.githubusercontent.com/elektrorl/base_f6/master/logo.png)
+![Logo Foundation](https://raw.githubusercontent.com/elektrorl/base_f6/master/logo.png)
 
 
 
