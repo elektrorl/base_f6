@@ -19,3 +19,7 @@ bower install
 
 ### Pour compiler avec Gulp
 `npm start` pour déclencher Gulp. À la fin de Gulp, les fichiers présents dans `src` seront compilés dans `css` et `js` et uploadés dans.
+
+### Pour toute nouvelle utilisation
+Ouvrir `gulpfile.js` et éditer les options SFTP pour uploader les fichiers compilés directement sur le nouveau serveur SSH.
+Vérifier les chemins des dossiers `css` et `js`.
