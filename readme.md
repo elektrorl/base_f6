@@ -1,6 +1,6 @@
-# ZURB Template
+# Base Theme Drupal 7 | Foundation 6 · FredORL version
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)
+[![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](base_f6/logo.png)
 
 **Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 
@@ -63,3 +63,4 @@ http://localhost:8000
 ```
 
 To create compressed, production-ready assets, run `npm run build`.
+# base_f6
