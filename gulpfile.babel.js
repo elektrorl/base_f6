@@ -23,7 +23,8 @@ gulp.task('default', gulp.series('build', watch));
 // Compile Sass into CSS
 function sass() {
   return gulp.src('src/scss/app.scss').pipe($.sass({
-    includePaths: PATHS.sass
+    includePaths: PATHS.sass,
+    outputStyle: 'compact'
   }).on('error', $.sass.logError)).pipe($.autoprefixer({
     browsers: COMPATIBILITY
   })).pipe(gulp.dest(PATHS.dist + 'css')).pipe(sftp(sftpOpts("css")));
