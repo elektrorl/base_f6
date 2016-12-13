@@ -27,13 +27,21 @@ function sass() {
     outputStyle: 'compact'
   }).on('error', $.sass.logError)).pipe($.autoprefixer({
     browsers: COMPATIBILITY
-  })).pipe(gulp.dest(PATHS.dist + 'css')).pipe(sftp(sftpOpts("css")));
+  })).pipe(gulp.dest(PATHS.dist + 'css')).pipe(sftp(sftpOpts("css"))).pipe(notify({
+    "title": "Gulp CSS",
+    "message": "Styles envoyés!",
+    "icon": "screenshot.png",
+  }));
 }
 // Combine JavaScript into one file
 function javascript() {
   return gulp.src(PATHS.javascript).pipe($.babel()).pipe($.concat('app.js')).pipe($.uglify().on('error', e => {
     console.log(e);
-  })).pipe(gulp.dest(PATHS.dist + 'js')).pipe(sftp(sftpOpts("js")));
+  })).pipe(gulp.dest(PATHS.dist + 'js')).pipe(sftp(sftpOpts("js"))).pipe(notify({
+    "title": "Gulp JS",
+    "message": "Javascript envoyé!",
+    "icon": "screenshot.png",
+  }));
 }
 //SFTP
 function sftpOpts(path) {
