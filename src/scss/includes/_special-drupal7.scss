@@ -58,17 +58,27 @@ a.tabledrag-handle .handle
 
 #admin-menu
 {
-    font-family: sans-serif;
-
-
-
+    font-family:  sans-serif;
     -webkit-box-shadow: none;
        -moz-box-shadow: none;
             box-shadow: none;
 }
-html.js fieldset.collapsed{
-    height: auto;
+
+
+html.js fieldset.collapsed { height: auto;
+    border-top: 1px solid rgba(10, 10, 10, 0.25);
+    legend{
+    margin-bottom: 1rem;
+    padding-right: .5rem;
 }
+}
+
+html.js fieldset.collapsible legend {
+    margin-bottom: 0;
+    padding-right: .5rem;
+}
+
+
 a.fieldset-title
 {
     color: white;
