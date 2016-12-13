@@ -54,7 +54,7 @@ function base_f6_preprocess_page( &$variables, $hook ) {
     '#theme' => 'menu_local_tasks',
     '#secondary' => $variables['tabs']['#secondary'],
   );
-  unset( $variables['tabs']['#secondary'] );
+
   if ( isset( $variables['main_menu'] ) ) {
     $variables['primary_nav'] = theme( 'links__system_main_menu', array(
         'links' => $variables['main_menu'],
@@ -420,7 +420,7 @@ function base_f6_fieldset($variables) {
     // Always wrap fieldset legends in a SPAN for CSS positioning.
     $output .= '<legend><span class="fieldset-legend label">' . $element['#title'] . '</span></legend>';
   }
-  $output .= '<div class="fieldset-wrapper">';
+  $output .= '<div class="fieldset-wrapper callout">';
   if (!empty($element['#description'])) {
     $output .= '<div class="fieldset-description small callout secondary">' . $element['#description'] . '</div>';
   }
