@@ -4,6 +4,7 @@ import gulp from 'gulp';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import sftp from 'gulp-sftp';
+import notify from 'gulp-notify';
 // Load all Gulp plugins into one variable
 const $ = plugins();
 // Load settings from settings.yml
