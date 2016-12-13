@@ -16,7 +16,8 @@ scripts[] = js/override.js
 ;regions[page_top] = Page top
 regions[header] = Header
 regions[help] = Help
-regions[highlighted] = Highlighted
+;regions[highlighted] = Highlighted
+regions[slicknav] = SlickNav Menu
 ;regions[page_bottom] = Page bottom
 
 
@@ -24,6 +25,10 @@ regions[highlighted] = Highlighted
 regions[sidebar_first] = Sidebar first
 regions[content] = Content
 regions[sidebar_second] = Sidebar second
+regions[offcanvasgauche] = OffCanvas Gauche
+regions[offcanvasdroit] = OffCanvas Droit
+regions[boutonoffcanvasgauche] = Bouton OffCanvas Gauche
+regions[boutonoffcanvasdroit] = Bouton OffCanvas Droit
 
 ;regions[triptych_first] = Triptych first
 ;regions[triptych_middle] = Triptych middle

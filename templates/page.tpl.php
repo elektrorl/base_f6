@@ -84,107 +84,159 @@
 * @see html.tpl.php
 */
 ?>
-<!-- Sub-header -->
-<div class="row" id="sub-header">
-  <!-- Logo -->
-  <div class="small-2 small-centered columns">
-    <?php if ($logo): ?>
-    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    </a>
-    <?php endif; ?>
-  </div>
-  <!-- Fin Logo -->
-  <!-- H1 Titre du site -->
-  <div class="small-4 small-centered columns">
-    <?php if ($site_name): ?>
-    <h1>
-    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
-    </h1>
-    <?php endif; ?>
-  </div>
-  <!-- Fin H1 Titre du site -->
-</div>
-<!-- Fin Sub-header -->
-<!-- Region Header -->
-<?php if ($page['header']): ?>
-<div class="row" id="header">
-  <div class="small-12 columns">
-    <?php print render($page['header']); ?>
-  </div>
-</div>
-<?php endif; ?>
-<!-- Fin Header -->
-<?php if ( $messages || $page['highlighted']): ?>
-<div class="row">
-  <div class="small-12 columns">
-    <?php print $messages; ?>
-    <?php print render($page['highlighted']); ?>
-  </div>
-</div>
-<?php endif; ?>
-<!-- Breadcrumb -->
-<?php if ($breadcrumb): ?>
-<div class="row" id="breadcrumb">
-  <div class="small-12 columns">
-    <?php print $breadcrumb; ?>
-  </div>
-</div>
-<?php endif; ?>
-<!-- Fin Breadcrumb -->
-<!-- MAIN -->
-<div class="row" id="main">
-  <a id="main-content"></a>
-  <!-- FIRST SIDEBAR -->
-  <?php if ($page['sidebar_first']): ?>
-  <div id="sidebar-first" class="small-12 medium-3 columns">
-    <?php print render($page['sidebar_first']); ?>
-  </div>
-  <?php endif; ?>
-  <!-- FIN FIRST SIDEBAR -->
-  <!-- CONTENT -->
-  <div class="<?php if ($page['sidebar_first'] || $page['sidebar_second']): ?>
-    <?php print 'medium-9'; ?>
-    <?php else : ?>
-    <?php print 'medium-12'; ?>
-    <?php endif; ?> small-12 columns" id="content">
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-    <h2 class="title" id="page-title">
-    <?php print $title; ?>
-    </h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    <?php if ($tabs): ?>
-    <div class="button-group-container">
-      <?php print render($tabs); ?>
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+      <!-- Region OffCanvasGauche -->
+      <?php if ($page['offcanvasgauche']): ?>
+      <div class="row" id="offcanvasgauche">
+        <div class="small-12 columns">
+          <?php print render($page['offcanvasgauche']); ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin OffCanvasGauche -->
     </div>
-    <?php endif; ?>
-    <?php print render($page['help']); ?>
-    <?php if ($action_links): ?>
-    <ul class="action-links menu">
-      <?php print render($action_links); ?>
-    </ul>
-    <?php endif; ?>
-    <?php print render($page['content']); ?>
-    <?php print $feed_icons; ?>
+    <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
+      <!-- Region offcanvasdroit -->
+      <?php if ($page['offcanvasdroit']): ?>
+      <div class="row" id="offcanvasdroit">
+        <div class="small-12 columns">
+          <?php print render($page['offcanvasdroit']); ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin offcanvasdroit -->
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <!-- Sub-header -->
+      <div class="row" id="sub-header">
+        <!-- Logo -->
+        <div class="small-2 small-centered columns">
+          <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+          <?php endif; ?>
+        </div>
+        <!-- Fin Logo -->
+        <!-- H1 Titre du site -->
+        <div class="small-4 small-centered columns">
+          <?php if ($site_name): ?>
+          <h1>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
+          </h1>
+          <?php endif; ?>
+        </div>
+        <!-- Fin H1 Titre du site -->
+      </div>
+      <!-- Fin Sub-header -->
+      <!-- Region Header -->
+      <?php if ($page['header']): ?>
+      <div class="row" id="header">
+        <div class="small-12 columns">
+          <?php print render($page['header']); ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin Header -->
+      <!-- SlickNav Menu -->
+      <?php if ($page['slicknav']): ?>
+      <div class="row" id="slicknav">
+        <div class="small-12 columns">
+          <?php print render($page['slicknav']); ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin SlickNav Menu -->
+      <!-- Messages -->
+      <?php if ( $messages): ?>
+      <div class="row">
+        <div class="small-12 columns">
+          <?php print $messages; ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin Messages -->
+      <!-- Breadcrumb -->
+      <?php if ($breadcrumb): ?>
+      <div class="row" id="breadcrumb">
+        <div class="small-12 columns">
+          <?php print $breadcrumb; ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      <!-- Fin Breadcrumb -->
+      <!-- MAIN -->
+      <div class="row" id="main">
+        <a id="main-content"></a>
+        <!-- FIRST SIDEBAR -->
+        <?php if ($page['sidebar_first']): ?>
+        <div id="sidebar-first" class="small-12 medium-3 columns">
+          <?php print render($page['sidebar_first']); ?>
+        </div>
+        <?php endif; ?>
+        <!-- FIN FIRST SIDEBAR -->
+        <!-- CONTENT -->
+        <div class="<?php if ($page['sidebar_first'] || $page['sidebar_second']): ?>
+          <?php print 'medium-9'; ?>
+          <?php else : ?>
+          <?php print 'medium-12'; ?>
+          <?php endif; ?> small-12 columns" id="content">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+          <h2 class="title" id="page-title">
+          <?php print $title; ?>
+          </h2>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php if ($tabs): ?>
+          <div class="button-group-container">
+            <?php print render($tabs); ?>
+          </div>
+          <?php endif; ?>
+          <?php print render($page['help']); ?>
+          <?php if ($action_links): ?>
+          <ul class="action-links menu">
+            <?php print render($action_links); ?>
+          </ul>
+          <?php endif; ?>
+          <?php print render($page['content']); ?>
+          <?php print $feed_icons; ?>
+        </div>
+        <!-- FIN CONTENT -->
+        <!-- SECOND SIDEBAR -->
+        <?php if ($page['sidebar_second']): ?>
+        <div id="sidebar-second" class="small-12 medium-3 columns"><div class="section">
+          <?php print render($page['sidebar_second']); ?>
+        </div></div>
+        <?php endif; ?>
+        <!-- FIN SECOND SIDEBAR -->
+      </div>
+      <!-- FIN MAIN -->
+      <!-- Footer -->
+      <?php if ($page['footer']): ?>
+      <div class="row" id="footer">
+        <div class="small-12 columns">
+          <?php print render($page['footer']); ?>
+        </div>
+      </div>
+      <!-- Fin Footer -->
+      <?php endif; ?>
+      <!-- Bouton OffCanvas Gauche Menu -->
+      <?php if ($page['boutonoffcanvasgauche']): ?>
+      <div id="boutonoffcanvasgauche">
+        <?php print render($page['boutonoffcanvasgauche']); ?>
+      </div>
+      <?php endif; ?>
+      <!-- Fin Bouton OffCanvas Gauche Menu -->
+      <!-- Bouton OffCanvas Droit Menu -->
+      <?php if ($page['boutonoffcanvasdroit']): ?>
+      <div id="boutonoffcanvasdroit">
+        <?php print render($page['boutonoffcanvasdroit']); ?>
+      </div>
+      <?php endif; ?>
+      <!-- Fin Bouton OffCanvas Droit Menu -->
+    </div>
   </div>
-  <!-- FIN CONTENT -->
-  <!-- SECOND SIDEBAR -->
-  <?php if ($page['sidebar_second']): ?>
-  <div id="sidebar-second" class="small-12 medium-3 columns"><div class="section">
-    <?php print render($page['sidebar_second']); ?>
-  </div></div>
-  <?php endif; ?>
-  <!-- FIN SECOND SIDEBAR -->
 </div>
-<!-- FIN MAIN -->
-<!-- Footer -->
-<?php if ($page['footer']): ?>
-<div class="row" id="footer">
-  <div class="small-12 columns">
-    <?php print render($page['footer']); ?>
-  </div>
-</div>
-<!-- Fin Footer -->
-<?php endif; ?>
