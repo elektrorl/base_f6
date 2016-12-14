@@ -371,8 +371,8 @@ function base_f6_menu_local_tasks(&$variables) {
   }
   if (!empty($variables['secondary'])) {
     $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="tabs secondary">';
-    $variables['secondary']['#suffix'] = '</ul>';
+    $variables['secondary']['#prefix'] .= '<div class="secondary button-group">';
+    $variables['secondary']['#suffix'] = '</div>';
     $output .= drupal_render($variables['secondary']);
   }
 
